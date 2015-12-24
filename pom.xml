@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.infobip.migration</groupId>
+	<artifactId>cross-server-test</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>cross-server-ejb-jboss6</module>
+		<module>cross-server-ejb-wildfly9</module>
+		<module>cross-server-ear</module>
+		<module>cross-server-common</module>
+	</modules>
+
+	<profiles>
+		<profile>
+			<id>wildfly9</id>
+			<properties>
+				<isjboss6>false</isjboss6>
+				<iswildfly9>true</iswildfly9>
+				<excludes></excludes>
+			</properties>
+			
+		</profile>
+		<profile>
+			<id>jboss6</id>
+			<properties>
+				<isjboss6>true</isjboss6>
+				<iswildfly9>false</iswildfly9>
+				<excludes>META-INF/jboss-deployment-structure.xml</excludes>
+			</properties>
+		</profile>
+	</profiles>
+</project>
