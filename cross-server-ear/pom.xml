@@ -8,17 +8,15 @@
   <artifactId>cross-server-ear</artifactId>
   <name>cross-server-ear</name>
   <packaging>ear</packaging>
-  
-  
 	<build>
 		<finalName>cross-server-test</finalName>
-		
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				
 			</plugin>
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ear-plugin</artifactId>

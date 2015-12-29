@@ -48,6 +48,11 @@
 			<type>pom</type>
 			<scope>provided</scope>
 		</dependency>
-
+			<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.5.6</version> 
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 </project>

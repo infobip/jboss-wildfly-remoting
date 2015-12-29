@@ -63,7 +63,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.4</version>
+			<version>4.9</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -74,12 +74,6 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>org.infobip.mpayments</groupId>
-			<artifactId>mpayments-util</artifactId>
-			<version>1.10-SNAPSHOT</version>
-			<scope>provided</scope>
-		</dependency>
 		<dependency>
 			<groupId>com.infobip.migration</groupId>
 			<artifactId>cross-server-common</artifactId>

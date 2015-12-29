@@ -60,12 +60,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>org.infobip.mpayments</groupId>
-			<artifactId>mpayments-util</artifactId>
-			<version>1.10-SNAPSHOT</version>
-			<scope>provided</scope>
-		</dependency>
+	
 		<dependency>
 			<groupId>com.infobip.migration</groupId>
 			<artifactId>cross-server-common</artifactId>

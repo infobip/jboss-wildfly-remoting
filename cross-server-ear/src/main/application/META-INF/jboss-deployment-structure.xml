@@ -3,12 +3,17 @@
 	<ear-subdeployments-isolated>false</ear-subdeployments-isolated>
 	<deployment>
 		<dependencies>
-			<module name="org.infobip.mpayments.mpayments-util" slot="main" />
+			<module name="org.slf4j" slot="main"/>
 		</dependencies>
 	</deployment>
 	<sub-deployment name="cross-server-ejb-wildfly9.jar">
 		<dependencies>
-			<module name="org.infobip.mpayments.mpayments-util" slot="main" />
+				<module name="org.slf4j" slot="main"/>
+		</dependencies>
+	</sub-deployment>
+	<sub-deployment name="cross-server-common.jar">
+		<dependencies>
+				<module name="org.slf4j" slot="main"/>
 		</dependencies>
 	</sub-deployment>
 </jboss-deployment-structure>

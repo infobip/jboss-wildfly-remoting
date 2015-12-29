@@ -1,22 +1,18 @@
 package com.infobip.crossserver.impl;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.Serializable;
 import java.net.URL;
 import java.net.URLClassLoader;
-import java.util.Properties;
 
 import javax.ejb.Stateless;
 
 import org.apache.log4j.Logger;
-import org.infobip.mpayments.util.classloader.AluniteClassLoader;
-import org.infobip.mpayments.util.jndi.JndiHandler;
-import org.infobip.mplatform.common.util.StringUtils;
 
+import com.infobip.classloader.AluniteClassLoader;
 import com.infobip.crossserver.IConnector;
+import com.infobip.jndi.JndiHandler;
+import com.infobip.util.Util;
 
 /**
  * 
@@ -33,7 +29,7 @@ public class ConnectorWildfly9Impl implements IConnector, Serializable {
 	public String hello(String name) {
 		ClassLoader previous = Thread.currentThread().getContextClassLoader();
 
-		if (StringUtils.isEmpty(name)) {
+		if (Util.isEmpty(name)) {
 			logger.info("Hello, this is Wildfly9. Please, identify yourself!");
 			return "Please, fill in your name and try again.";
 		}

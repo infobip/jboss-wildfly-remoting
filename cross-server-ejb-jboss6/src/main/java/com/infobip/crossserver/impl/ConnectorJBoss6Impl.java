@@ -10,12 +10,11 @@ import javax.ejb.Stateless;
 import javax.naming.NamingException;
 
 import org.apache.log4j.Logger;
-import org.infobip.mpayments.util.classloader.AluniteClassLoader;
-import org.infobip.mpayments.util.jndi.JndiHandler;
-import org.infobip.mplatform.common.util.StringUtils;
 
-
+import com.infobip.classloader.AluniteClassLoader;
 import com.infobip.crossserver.IConnector;
+import com.infobip.jndi.JndiHandler;
+import com.infobip.util.Util;
 
 @Stateless(mappedName= "ConnectorJBoss6")
 public class ConnectorJBoss6Impl implements IConnector, Serializable {
@@ -26,7 +25,7 @@ public class ConnectorJBoss6Impl implements IConnector, Serializable {
 	
 	public String hello(String name) {
 		
-		if (StringUtils.isEmpty(name))
+		if (Util.isEmpty(name))
 		{
 			logger.info("Hello, this is JBoss6. Please, identify yourself!");
 			return "Please, fill in your name and try again.";
@@ -41,6 +40,11 @@ public class ConnectorJBoss6Impl implements IConnector, Serializable {
 			
 			// add wildfly client library			
 			// don't set a parent, so we run in complete isolation.
+			/**
+			 * Constructs a new URLClassLoader for the given URLs. 
+			 * The URLs will be searched in the order specified for classes and resources after first searching in the 
+			 * specified parent class loader
+			 */
 			// "file:///home/ashraf/Desktop/simple-bean-1.0.jar")};
 			URLClassLoader urlCl = new URLClassLoader(new URL[]{new URL(new File(jbossHome).toURI().toURL(), "client/jboss-client.jar")}, null);
 			//  since we're running in isolation my own interface needs to be added.

@@ -20,7 +20,7 @@ public class SimpleTestCase {
 
 
 		try {
-			IConnector connector = (IConnector) lookup("localhost", "8180");
+			IConnector connector = (IConnector) lookup("localhost", "8080");
 
 			if (connector == null)
 				log.error("Error while fetching deployed EJB ...");
@@ -29,7 +29,7 @@ public class SimpleTestCase {
 			else {
 				log.info("Calling JBoss6 EJB...");
 
-				String answer = connector.hello("Jay");
+				String answer = connector.hello("Centili");
 				
 				log.info(answer);
 				

@@ -26,7 +26,7 @@ public class SimpleTestCase {
 			else {
 				log.info("Calling wildfly9 EJB...");
 
-				connector.hello("Jay");
+				connector.hello("Infobip");
 				
 			}
 		} catch (Exception e) {
