@@ -37,11 +37,6 @@
 							<bundleFileName>cross-server-ejb-wildfly9.jar</bundleFileName>
 							<excluded>${isjboss6}</excluded>
 						</ejbModule>
-						<ejbModule>
-							<groupId>com.infobip.migration</groupId>
-							<artifactId>cross-server-common</artifactId>
-							<bundleFileName>cross-server-common.jar</bundleFileName>
-						</ejbModule>
 					</modules>
 				</configuration>
 			</plugin>

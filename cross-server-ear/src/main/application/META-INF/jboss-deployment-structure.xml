@@ -11,7 +11,7 @@
 				<module name="org.slf4j" slot="main"/>
 		</dependencies>
 	</sub-deployment>
-	<sub-deployment name="cross-server-common.jar">
+	<sub-deployment name="cross-server-common-0.0.1-SNAPSHOT.jar">
 		<dependencies>
 				<module name="org.slf4j" slot="main"/>
 		</dependencies>
