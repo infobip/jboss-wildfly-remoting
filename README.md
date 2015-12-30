@@ -2,7 +2,7 @@
 
 ## Description
 
-The **CROSS SERVER PROJECT** project contains classes for demo project for JBoss6 to Wildfly9 remote communication 
+The **CROSS SERVER PROJECT** project is demo project for JBoss6 to Wildfly9 remote communication 
 
 ### Prerequisites
 
@@ -33,7 +33,9 @@ run JUnit SimpleTestCase in cross-server-ejb-wildfly9
 
 ### Owners
 
-* Infobip
+Centili Team @ Infobip Belgrade, Serbia
+
+ © 2014, Infobip Ltd.
 
 
 
