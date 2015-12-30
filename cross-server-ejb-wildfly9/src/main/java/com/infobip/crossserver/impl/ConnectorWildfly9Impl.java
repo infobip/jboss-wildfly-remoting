@@ -1,9 +1,11 @@
 package com.infobip.crossserver.impl;
 
 import java.io.File;
+import java.io.InputStream;
 import java.io.Serializable;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.util.Properties;
 
 import javax.ejb.Stateless;
 
@@ -36,8 +38,12 @@ public class ConnectorWildfly9Impl implements IConnector, Serializable {
 	
 		try {
 
-			String jbossHome = "D:/jboss-as-distribution-6.1.0.Final/jboss-6.1.0.Final/client";
-
+			Properties properties = new Properties(); 
+			InputStream is = (ConnectorWildfly9Impl.class.getClassLoader().getResourceAsStream("location.properties"));
+			
+			properties.load(is);
+			String jbossHome = properties.getProperty("serverHome");
+			
 			// don't set a parent, so we run in complete isolation.
 			URLClassLoader urlCl = new URLClassLoader(
 					new URL[] { new URL(new File(jbossHome).toURI().toURL(), "jbossall-client.jar") });

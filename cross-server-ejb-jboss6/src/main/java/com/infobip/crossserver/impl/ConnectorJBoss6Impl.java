@@ -1,10 +1,13 @@
 package com.infobip.crossserver.impl;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.util.Properties;
 
 import javax.ejb.Stateless;
 import javax.naming.NamingException;
@@ -15,6 +18,7 @@ import com.infobip.classloader.AluniteClassLoader;
 import com.infobip.crossserver.IConnector;
 import com.infobip.jndi.JndiHandler;
 import com.infobip.util.Util;
+
 
 @Stateless(mappedName= "ConnectorJBoss6")
 public class ConnectorJBoss6Impl implements IConnector, Serializable {
@@ -36,8 +40,12 @@ public class ConnectorJBoss6Impl implements IConnector, Serializable {
 		ClassLoader previous = Thread.currentThread().getContextClassLoader();
 		
 		try {
-			String jbossHome = "D:/wildfly-9.0.2.Final - instance1/bin";
 			
+			Properties properties = new Properties(); 
+			InputStream is = (ConnectorJBoss6Impl.class.getClassLoader().getResourceAsStream("location.properties"));
+			
+			properties.load(is);
+			String jbossHome = properties.getProperty("serverHome");
 			// add wildfly client library			
 			// don't set a parent, so we run in complete isolation.
 			/**
@@ -68,6 +76,8 @@ public class ConnectorJBoss6Impl implements IConnector, Serializable {
 			
 		} catch (NamingException e) {
 			logger.error(e.getMessage());
+		} catch (IOException e) {
+			logger.error("Could not load location properties file from IS");
 		}
 		finally {
 			Thread.currentThread().setContextClassLoader(previous);

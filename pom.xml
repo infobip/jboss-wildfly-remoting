@@ -18,6 +18,7 @@
 			<properties>
 				<isjboss6>false</isjboss6>
 				<iswildfly9>true</iswildfly9>
+				<client.lib.location>D:/jboss-as-distribution-6.1.0.Final/jboss-6.1.0.Final/client</client.lib.location>
 				<excludes></excludes>
 			</properties>
 			
@@ -27,6 +28,7 @@
 			<properties>
 				<isjboss6>true</isjboss6>
 				<iswildfly9>false</iswildfly9>
+				<client.lib.location>D:/wildfly-9.0.2.Final - instance1/bin</client.lib.location>
 				<excludes>META-INF/jboss-deployment-structure.xml</excludes>
 			</properties>
 		</profile>
